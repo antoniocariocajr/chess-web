@@ -6,6 +6,8 @@ Bem-vindo ao **Xadrez Web**! Este projeto é uma implementação elegante e modu
 
 Desafie seus amigos ou teste suas estratégias em um tabuleiro responsivo e interativo!
 
+[Teste agora](https://antoniocariocajr.github.io/chess-web/)
+
 ## ✨ Funcionalidades
 
 - **Tabuleiro Interativo**: Renderização dinâmica com peças em Unicode.

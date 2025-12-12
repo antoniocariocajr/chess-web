@@ -17,3 +17,11 @@ export const START_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0
 export const API_BASE = 'http://localhost:8080/api/chess';
 export const API_TIMEOUT = 8000; // 8 segundos
 export const BOT_DEPTH = 10;
+
+export const THEME = {
+    LIGHT_SQUARE: '#f0d9b5',
+    DARK_SQUARE: '#b58863',
+    HIGHLIGHT: '#fffb76',
+    CHECK: '#e53e3e',
+    LAST_MOVE: '#cdd26a',
+};

@@ -1,16 +1,87 @@
-#tabuleiro_xadrez{
+/* Board container */
+#tabuleiro_xadrez {
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
-    border: 2px solid #000;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 100%;
+    max-width: 600px; /* Max size constraints */
+    aspect-ratio: 1 / 1;
+    border: 5px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-color: #333;
 }
-.casa{
-    width: 50px;
-    height: 50px;
+
+/* Squares */
+.square {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
 }
-.casa.branca{
-    background-color: #f0d9b5;
+
+.light-square {
+    background-color: #eeeed2; /* Cream */
 }
-.casa.preta{
-    background-color: #b58863;
+
+.dark-square {
+    background-color: #769656; /* Green */
+}
+
+/* Pieces (Unicode) */
+.piece {
+    font-size: 3.5rem; /* Large pieces */
+    line-height: 1;
+    cursor: grab;
+    transition: transform 0.2s;
+    filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.3));
+}
+
+.piece:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+.piece[data-color="WHITE"] {
+    color: #fff;
+    text-shadow: 0 0 2px #000; /* Outline for better visibility */
+}
+.piece[data-color="BLACK"] {
+    color: #222;
+}
+
+/* Highlights */
+.highlight-move::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Center bubble */
+}
+
+.highlight-capture::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 6px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.selected-square {
+    background-color: rgba(255, 255, 50, 0.5) !important; /* Yellow highlight */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .piece {
+        font-size: 2.5rem;
+    }
 }

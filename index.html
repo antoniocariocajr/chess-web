@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,63 @@
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/reset.css">
     <link rel="stylesheet" href="src/styles/board.css">
-    <script src="src/scripts/main.js" defer></script>
+    <script type="module" src="src/scripts/main.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1 class="title">♟️ Xadrez Web</h1>
     </header>
     <main>
         <!-- Left Panel -->
-            <aside class="left_panel">
-                <section class="panel_card" aria-label="Game Status">
-                    <h2 class="panel_title">Game Status</h2>
-                    <div class="status-info">
-                        <div class="status-item">
-                            <span class="status-label">Current Turn:</span>
-                            <span class="status-value" id="current-player">-</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-label">Game State:</span>
-                            <span class="status-value" id="game-status">No game</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-label">Move Count:</span>
-                            <span class="status-value" id="move-count">0</span>
-                        </div>
-                        <div class="status-item check-indicator" id="check-indicator" role="alert" aria-live="polite">
-                            <span class="check-text">⚠️ CHECK!</span>
-                        </div>
+        <aside class="left_panel">
+            <section class="panel_card" aria-label="Game Status">
+                <h2 class="panel_title">Game Status</h2>
+                <div class="status-info">
+                    <div class="status-item">
+                        <span class="status-label">Current Turn:</span>
+                        <span class="status-value" id="current-player">-</span>
                     </div>
-                </section>
+                    <div class="status-item">
+                        <span class="status-label">Game State:</span>
+                        <span class="status-value" id="game-status">No game</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Move Count:</span>
+                        <span class="status-value" id="move-count">0</span>
+                    </div>
+                    <div class="status-item check-indicator" id="check-indicator" role="alert" aria-live="polite">
+                        <span class="check-text">⚠️ CHECK!</span>
+                    </div>
+                </div>
+            </section>
 
-                <section class="panel_card" aria-label="Captured Pieces">
-                    <h2 class="panel_title">Captured Pieces</h2>
-                    <div class="captured-pieces">
-                        <div class="captured-group">
-                            <span class="captured-label">White:</span>
-                            <div id="captured-white" class="captured-list" role="list"></div>
-                        </div>
-                        <div class="captured-group">
-                            <span class="captured-label">Black:</span>
-                            <div id="captured-black" class="captured-list" role="list"></div>
-                        </div>
+            <section class="panel_card" aria-label="Captured Pieces">
+                <h2 class="panel_title">Captured Pieces</h2>
+                <div class="captured-pieces">
+                    <div class="captured-group">
+                        <span class="captured-label">White:</span>
+                        <div id="captured-white" class="captured-list" role="list"></div>
                     </div>
-                </section>
+                    <div class="captured-group">
+                        <span class="captured-label">Black:</span>
+                        <div id="captured-black" class="captured-list" role="list"></div>
+                    </div>
+                </div>
+            </section>
 
-                <section class="panel_card" aria-label="Game Controls">
-                    <h2 class="panel_title">Controls</h2>
-                    <div class="controls">
-                        <button id="new-game-btn" class="btn btn-primary">
-                            <span class="btn-icon">🎮</span>New Game
-                        </button>
-                        <button id="resign-btn" class="btn btn-secondary" disabled>
-                            <span class="btn-icon">🏳️</span>Resign
-                        </button>
-                    </div>
-                </section>
-            </aside>
+            <section class="panel_card" aria-label="Game Controls">
+                <h2 class="panel_title">Controls</h2>
+                <div class="controls">
+                    <button id="new-game-btn" class="btn btn-primary">
+                        <span class="btn-icon">🎮</span>New Game
+                    </button>
+                    <button id="resign-btn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">🏳️</span>Resign
+                    </button>
+                </div>
+            </section>
+        </aside>
         <aside class="tabuleiro_container">
             <section id="tabuleiro_xadrez">
                 <!-- O tabuleiro será gerado dinamicamente via JavaScript -->
@@ -70,6 +72,9 @@
 
         </aside>
     </main>
-    <footer>produzido por Bill Carioca</footer>
+    <footer>
+        <p>produzido por Bill Carioca</p>
+    </footer>
 </body>
+
 </html>
